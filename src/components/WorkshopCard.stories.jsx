@@ -4,14 +4,14 @@ export default {
   title: 'Komponenter/Workshopkort',
   component: WorkshopCard,
   args: {
-    title: 'Fotografera i kvällsljus',
-    date: '12 december · kl. 15–17',
-    description: 'Ta med en kamera eller en mobil till fotopromenaden.',
+    title: 'Ta kontroll över din kamera',
+    description: 'En workshop för vuxna nybörjare som vill komma vidare från autoläget.',
+    href: '#boka',
   },
   argTypes: {
     title: { control: 'text', name: 'Rubrik' },
-    date: { control: 'text', name: 'Datum' },
     description: { control: 'text', name: 'Beskrivning' },
+    href: { control: 'text', name: 'Länk' },
   },
 }
 

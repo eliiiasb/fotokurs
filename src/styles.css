@@ -1,17 +1,23 @@
-@import '@fontsource-variable/dm-sans';
+@import '@fontsource/space-grotesk/300.css';
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-mono/400.css';
 
 /* Samma värden används på webbsidan och i Storybook. */
 :root {
-  --color-page: #f4f3ed;
+  --color-page: #ffffff;
   --color-surface: #ffffff;
-  --color-text: #222c28;
-  --color-accent: #285d4c;
-  --color-line: #b7c0b9;
+  --color-text: #272727;
+  --color-accent: #427aa1;
+  --color-line: #ebf2fa;
+  --color-surface-blue: #ebf2fa;
   --text-body: 1rem;
   --text-heading: clamp(2rem, 6vw, 3.5rem);
   --text-card-title: 1.5rem;
   --space-card: clamp(1rem, 4vw, 2rem);
-  font-family: 'DM Sans Variable', system-ui, sans-serif;
+  --font-primary: 'Space Grotesk', sans-serif;
+  --font-secondary: 'Space Mono', monospace;
+  font-family: var(--font-primary);
   color: var(--color-text);
   background: var(--color-page);
   font-size: 100%;
@@ -20,11 +26,273 @@
 
 * { box-sizing: border-box; }
 body { margin: 0; font-size: var(--text-body); }
-.site { width: min(100% - 2rem, 58rem); margin: 0 auto; }
-nav { display: flex; gap: 1.5rem; border-bottom: 1px solid var(--color-line); }
-nav a { padding: 1rem 0; color: var(--color-accent); text-underline-offset: 0.25em; }
-nav [aria-current="page"] { font-weight: 700; }
-main { padding-block: 2.5rem; }
-h1 { font-size: var(--text-heading); line-height: 1.1; margin: 0 0 1.5rem; }
-h2 { font-size: var(--text-card-title); line-height: 1.25; margin: 0 0 0.75rem; }
+.site { width: 100%; margin: 0 auto; background: var(--color-page); }
+.site-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 110px;
+  padding: 33px 16px;
+  background: var(--color-surface-blue);
+}
+.site-logo {
+  color: #000000;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 46px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  width: 46px;
+  height: 8px;
+  background: #000000;
+}
+.primary-navigation {
+  display: none;
+  position: absolute;
+  top: 110px;
+  right: 16px;
+  left: 16px;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: var(--color-surface-blue);
+  border-radius: 0 0 8px 8px;
+}
+.primary-navigation--open { display: flex; }
+.primary-navigation a {
+  color: #000000;
+  font-size: 1.5rem;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  text-decoration: none;
+}
+.primary-navigation__button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #ffffff !important;
+  font-family: var(--font-primary);
+  font-size: 1rem !important;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+main { display: flex; flex-direction: column; gap: 32px; }
+.hero {
+  position: relative;
+  height: 453px;
+  overflow: hidden;
+  background: #d7e2e9;
+}
+.hero__image,
+.hero__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero__image img { object-fit: cover; object-position: 58% center; }
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 234px;
+  padding: 48px 16px 32px;
+}
+.hero h1 {
+  margin: 0;
+  color: #272727;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 300;
+}
+.hero p { margin: 0; color: #272727; font-family: var(--font-primary); font-weight: 400; line-height: 1.5rem; }
+.home-workshop { padding: 0 16px 64px; }
+.site-footer {
+  min-height: 378px;
+  padding: 32px 16px 64px;
+  background: var(--color-surface-blue);
+}
+.site-footer > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 282px;
+}
+.site-footer p { margin: 0; }
+.site-footer__about,
+.site-footer__details {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.site-footer__about {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+.site-footer__details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  margin-top: auto;
+  margin-bottom: 28px;
+}
+.site-footer__logo {
+  color: #000000;
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.workshop-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.workshop-page__back {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #427aa1;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.workshop-page__back--top,
+.workshop-page__back--mobile {
+  width: 100%;
+}
+
+.booking-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 604px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.booking-page__back {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #427aa1;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.booking-page__spacer { display: none; }
+
 :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+@media (min-width: 768px) {
+  .site-header {
+    min-height: 110px;
+    padding: 33px 80px;
+  }
+  .site-logo { font-size: 1.5rem; }
+  .menu-toggle { display: none; }
+  .primary-navigation {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding: 0;
+    background: transparent;
+  }
+  .primary-navigation a { font-size: 1.5rem; line-height: 2rem; }
+  .primary-navigation__button {
+    min-height: 48px;
+    padding: 16px;
+    font-size: 1rem !important;
+  }
+  main { gap: 32px; }
+  .hero {
+    height: 426px;
+  }
+  .hero__image img { object-position: center; }
+  .hero__content {
+    max-width: 600px;
+    padding: 32px 80px;
+  }
+  .hero h1 {
+    max-width: 536px;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .hero p { max-width: 536px; }
+  .home-workshop { padding: 0 80px 64px; }
+  .site-footer {
+    min-height: 378px;
+    padding: 32px 80px 64px;
+  }
+  .site-footer > div { min-height: 282px; }
+  .site-footer__details { margin-bottom: 28px; }
+
+  .workshop-page {
+    max-width: none;
+    align-items: flex-start;
+    padding: 32px 80px 64px;
+  }
+
+  .workshop-page__back {
+    width: fit-content;
+  }
+
+  .booking-page {
+    max-width: 604px;
+    align-items: flex-start;
+  }
+
+  .booking-page__back {
+    width: fit-content;
+  }
+}

@@ -11,6 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as BokningRouteImport } from './routes/bokning'
+import { Route as BokningBekraftadRouteImport } from './routes/bokning-bekraftad'
+import { Route as GranskaBokningRouteImport } from './routes/granska-bokning'
+import { Route as WorkshopRouteImport } from './routes/workshop'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,9 +26,33 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 })
+const BokningRoute = BokningRouteImport.update({
+  id: '/bokning',
+  path: '/bokning',
+  getParentRoute: () => rootRouteImport,
+})
+const BokningBekraftadRoute = BokningBekraftadRouteImport.update({
+  id: '/bokning-bekraftad',
+  path: '/bokning-bekraftad',
+  getParentRoute: () => rootRouteImport,
+})
+const GranskaBokningRoute = GranskaBokningRouteImport.update({
+  id: '/granska-bokning',
+  path: '/granska-bokning',
+  getParentRoute: () => rootRouteImport,
+})
+const WorkshopRoute = WorkshopRouteImport.update({
+  id: '/workshop',
+  path: '/workshop',
+  getParentRoute: () => rootRouteImport,
+})
 
 const rootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
+  BokningRoute: BokningRoute,
+  BokningBekraftadRoute: BokningBekraftadRoute,
+  GranskaBokningRoute: GranskaBokningRoute,
+  WorkshopRoute: WorkshopRoute,
 }
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)

@@ -1,0 +1,98 @@
+.booking-confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 16px 16px 64px;
+}
+
+.booking-confirmation__success {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 184px;
+  padding: 16px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+}
+
+.booking-confirmation__success-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.booking-confirmation__success h1,
+.booking-confirmation__welcome h2,
+.booking-confirmation__success p,
+.booking-confirmation__welcome p {
+  margin: 0;
+}
+
+.booking-confirmation__success h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.booking-confirmation__success-copy > p,
+.booking-confirmation__welcome-copy > p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.booking-confirmation__reference {
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+.booking-confirmation__welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.booking-confirmation__welcome-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-confirmation__welcome-copy > p + p {
+  margin-top: 16px;
+}
+
+.booking-confirmation__welcome h2 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+.booking-confirmation__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 255px;
+  min-height: 52px;
+  padding: 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

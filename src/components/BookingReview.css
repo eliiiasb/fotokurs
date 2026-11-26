@@ -1,0 +1,88 @@
+.booking-review {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 32px 16px 92px;
+}
+
+.booking-review__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--color-surface-blue);
+  color: #000000;
+}
+
+.booking-review__intro h1,
+.booking-review__intro p,
+.booking-review__summary h2,
+.booking-review__summary p,
+.booking-review__price {
+  margin: 0;
+}
+
+.booking-review__intro h1,
+.booking-review__summary h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.booking-review__intro p,
+.booking-review__summary p,
+.booking-review__price {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.booking-review__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-text);
+}
+
+.booking-review__price {
+  text-align: center;
+}
+
+.booking-review__actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.booking-review__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .booking-review {
+    max-width: 640px;
+    gap: 24px;
+    padding-top: 48px;
+    padding-bottom: 92px;
+  }
+}

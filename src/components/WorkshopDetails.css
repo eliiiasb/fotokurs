@@ -1,0 +1,157 @@
+.workshop-details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 640px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #ebf2fa;
+}
+
+.workshop-details__intro,
+.workshop-details__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.workshop-details__intro { gap: 16px; }
+.workshop-details__text { gap: 16px; }
+
+.workshop-details h1 {
+  margin: 0;
+  color: #272727;
+  font-family: var(--font-primary);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.workshop-details p,
+.workshop-details dl,
+.workshop-details dd {
+  margin: 0;
+}
+
+.workshop-details__text p,
+.workshop-details__row,
+.workshop-details__occasions {
+  color: #272727;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.workshop-details__image,
+.workshop-details__image img {
+  display: block;
+  width: 100%;
+}
+
+.workshop-details__image {
+  height: 140px;
+  overflow: hidden;
+}
+
+.workshop-details__image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.workshop-details__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.workshop-details__row {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  align-items: start;
+}
+
+.workshop-details__row dt {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+
+.workshop-details__occasions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.workshop-details__occasions-title {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+.workshop-details__occasions dl {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.workshop-details__occasions dl div {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+}
+
+.workshop-details__occasions dt { font-weight: 400; }
+
+.workshop-details__button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #427aa1;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .workshop-details {
+    max-width: none;
+  }
+
+  .workshop-details__intro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .workshop-details h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .workshop-details__image {
+    height: 358px;
+  }
+
+  .workshop-details__list {
+    gap: 32px;
+  }
+
+  .workshop-details__row,
+  .workshop-details__occasions dl div {
+    grid-template-columns: 130px 219px;
+    gap: 32px;
+  }
+
+  .workshop-details__button {
+    width: fit-content;
+  }
+}

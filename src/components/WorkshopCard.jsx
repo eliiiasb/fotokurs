@@ -1,18 +1,27 @@
 import './WorkshopCard.css'
 
 export function WorkshopCard({
-  title = 'Fotografera i kvällsljus',
-  date = '12 december · kl. 15–17',
-  description = 'Vi övar på att hitta riktat ljus och välja utsnitt under en fotopromenad.',
+  title = 'Ta kontroll över din kamera',
+  description = 'En workshop för vuxna nybörjare som vill komma vidare från autoläget.',
+  href = '/workshop',
 }) {
   return (
     <article className="workshop-card">
-      <p className="workshop-date">{date}</p>
-      <h2>{title}</h2>
-      <details>
-        <summary>Om workshopen</summary>
-        <p>{description}</p>
-      </details>
+      <h2 className="workshop-card__title">{title}</h2>
+      <picture className="workshop-card__image">
+        <source
+          media="(min-width: 768px)"
+          srcSet="/images/workshop-desktop.png"
+        />
+        <img
+          src="/images/workshop-mobile.png"
+          alt="Fotograf som fotograferar i en stadsmiljö"
+        />
+      </picture>
+      <p className="workshop-card__description">{description}</p>
+      <a className="workshop-card__button" href={href}>
+        Läs mer och boka här
+      </a>
     </article>
   )
 }
